@@ -1,5 +1,5 @@
 <a class="top-link" href="/">Home </a><span>|<span>
-<a class="top-link" href="/pokemon"> Favorites</a></span><span>|</span>
+<a class="top-link" href="/pokemon"> Favorites </a></span><span>|</span>
 <span><%= pokemon.name%></span>
 <br />
 
@@ -12,3 +12,7 @@
 		<li><%= abilities[i].ability.name%></li>
 	<%}%>
 </ol>
+<br />
+<form method="POST" action="/pokemon/<%= pokemon.name%>">
+	<input type="submit" class="btn btn-danger" value="Delete from Favorites" />
+</form>

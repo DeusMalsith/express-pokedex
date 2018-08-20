@@ -40,4 +40,17 @@ router.post('/', function(req, res) {
   });
 });
 
+// Delete a pokemon from favorites list
+router.post('/:id', function(req, res) {
+	var pokeName = req.params.id;
+	console.log('pokeName:', pokeName);
+	db.pokemon.destroy({
+		where: {
+			name: pokeName
+		}
+	}).then(function() {
+	res.redirect('/pokemon');		
+	});
+});
+
 module.exports = router;
