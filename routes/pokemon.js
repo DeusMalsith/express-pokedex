@@ -23,7 +23,7 @@ router.get('/:id', function(req, res) {
 	// Use request to call the API
 	request(pokemonUrl, function(error, response, body) {
 	  var pokemon = JSON.parse(body);
-	  res.render('pokemon/show', {pokemon: pokemon, image: pokemon.sprites.front_shiny, exp: pokemon.base_experience, type: pokemon.types[0].type.name, abilities: pokemon.abilities });
+	  res.render('pokemon/show', {pokemon: pokemon, image: pokemon.sprites.front_shiny, front: pokemon.sprites.front_default, exp: pokemon.base_experience, type: pokemon.types[0].type.name, abilities: pokemon.abilities });
 	});
 });
 
